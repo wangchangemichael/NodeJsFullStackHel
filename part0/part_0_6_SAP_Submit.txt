@@ -1,0 +1,16 @@
+note over browser:
+clicking the button
+end note
+
+browser->browser: event.preventDefault()
+note right of browser: JavaScript stops the default form submission
+
+browser->browser: notes.push(newNote)
+browser->browser: redrawNotes()
+note right of browser: JS adds the note to the list
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note right of browser: Data sent as JSON: { "content": "123", "date": "2026-01-03T11:47:11.341Z" }
+
+server-->browser: 201 Created {"message":"note created"}
+note left of server: Server confirms receipt, but sends no redirect or HTML
