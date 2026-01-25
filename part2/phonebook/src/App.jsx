@@ -65,6 +65,8 @@ const Add = ({newName, newNumber,  persons, setter}) => {
       })
       .then(
         ()=> showMessage(`Added ${thePerson.name}`)
+      ).catch(
+        error => {showMessage(error.response.data.error, 'error')}
       );
     }
   }
